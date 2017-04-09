@@ -13,6 +13,26 @@
 
 	<name>Markdown Editor (plugin)</name>
 	<description>Markdown Editor Plugin for Eclipse</description>
-
+	
+	<build>
+		<plugins>
+			<plugin>            
+                <groupId>com.licel</groupId>
+                <artifactId>stringer-maven-plugin</artifactId>
+                <version>${stringer.version}</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>stringer</goal>
+                        </goals>
+                        <configuration>
+                           <configFile>${stringer.config}</configFile>   
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+		</plugins>
+	</build>
 </project>
 

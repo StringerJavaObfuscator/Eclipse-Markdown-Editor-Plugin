@@ -1,3 +1,46 @@
+## Eclipse Plugin Protection
+
+This fork of the simple Eclipse plugin (https://github.com/winterstein/Eclipse-Markdown-Editor-Plugin) is to demonstrate how to Stringer protection for this kind of applications.
+
+## Description
+- https://jfxstore.com/stringer/docs#maven-plugin
+
+## Requirements
+- Maven
+- Stringer Standard or Enterpise with a valid license
+
+## Configuring 
+Install Stinger and Stringer Maven plugin to local Maven repository:
+
+```
+mvn install:install-file -Dfile=`pwd`/stringer.jar -DpomFile=`pwd`/stringer.pom
+mvn install:install-file -Dfile=`pwd`/stringer-annotations.jar -DpomFile=`pwd`/stringer-annotations.pom
+mvn install:install-file -Dfile=`pwd`/stringer-maven-plugin.jar -DpomFile=`pwd`/stringer-maven-plugin.pom
+```
+
+## Building
+
+```
+mvn clean install
+```
+
+## Installation of the protected plugin:
+1. Run Eclipse
+1. Open the installation dialog from the main menu Help -> Install
+1. Click to the "Add..." button to add custom update site
+1. Click to the "Archive..." button and choose the archive Eclipse-Markdown-Editor-Plugin/site/target/markdown.editor.site-1.2.0-SNAPSHOT.zip
+![Plugin Installation](img/install.png)
+1. Install the plugin and restart Eclipse
+
+## Stringer Protection Examples
+Examples below show Stringer protection for classes.
+
+### A class without protection 
+![Not Protected Class](img/class.png)
+
+### The class protected by Stringer
+![Protected Class](img/class_protected.png)
+
 # Eclipse Markdown Editor Plugin
 
 [![Build Status](https://secure.travis-ci.org/winterstein/Eclipse-Markdown-Editor-Plugin.png)](http://travis-ci.org/winterstein/Eclipse-Markdown-Editor-Plugin)
